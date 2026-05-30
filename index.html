@@ -1,291 +1,1574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EYELY Business Solutions | International Trade & Corporate Growth UAE</title>
-    <meta name="description" content="Empowering International Trade & Business Growth from the UAE. Premium consulting, import/export support, and global expansion strategies.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EYELY Store | Premium Eyewear Trading | SPC Freezone, Sharjah, UAE</title>
+  <meta name="description" content="EYELY Store — UAE-registered eyewear trading company. Import and online distribution of eyewear frames, sunglasses, and optical accessories via Amazon.ae and Noon.com.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --ivory: #F9F6F0;
+      --cream: #F0EBE1;
+      --warm-white: #FDFAF5;
+      --obsidian: #0E0E0E;
+      --charcoal: #1C1C1C;
+      --mid: #4A4A4A;
+      --muted: #888888;
+      --border: #E0D8CC;
+      --gold: #B8922A;
+      --gold-light: #D4AF5A;
+      --gold-pale: #F0E2BB;
+      --accent-blue: #1A3A5C;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--warm-white);
+      color: var(--obsidian);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    body { overflow-x: hidden; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(249, 246, 240, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo-wrap { text-decoration: none; color: var(--obsidian); }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .logo-name span { color: var(--gold); }
+    .logo-tag {
+      display: block;
+      font-size: 0.52rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: -3px;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--obsidian) !important;
+      color: var(--ivory) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      font-size: 0.75rem !important;
+      letter-spacing: 2px !important;
+      transition: var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: #fff !important; }
+
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--obsidian); margin: 5px 0;
+      transition: var(--transition);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--ivory);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-left {
+      padding: 6rem 3rem 6rem 8%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--gold-light);
+      background: var(--gold-pale);
+      color: var(--gold);
+      padding: 0.35rem 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 1px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--obsidian);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-dark {
+      background: var(--obsidian);
+      color: var(--ivory);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: var(--transition);
+      border: 1px solid var(--obsidian);
+      display: inline-block;
+    }
+    .btn-dark:hover { background: var(--gold); border-color: var(--gold); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--obsidian);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-right {
+      height: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-img-mosaic {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      height: 100%;
+      padding: 3px;
+    }
+
+    .mosaic-top, .mosaic-bottom {
+      display: grid;
+      gap: 3px;
+    }
+    .mosaic-top { grid-template-columns: 2fr 1fr; }
+    .mosaic-bottom { grid-template-columns: 1fr 2fr; }
+
+    .mosaic-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 180px;
+    }
+
+    /* Hero mosaic overflow guard */
+    .hero-right img { transition: transform 0.6s ease; }
+
+    .hero-stat-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    .hero-stat {
+      padding: 1.5rem 0;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--obsidian);
+    }
+    .hero-stat-lbl {
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── SECTIONS SHARED ── */
+    section { padding: 7rem 0; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.68rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h2.sec-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--obsidian);
+      margin-bottom: 1.25rem;
+    }
+    h2.sec-title em { font-style: italic; color: var(--gold); }
+
+    .sec-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-section { background: var(--warm-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-info-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .info-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.5rem;
+    }
+    .info-card-label {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .info-card-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--obsidian);
+      line-height: 1.4;
+    }
+    .info-card-value a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .about-right { padding-top: 1rem; }
+
+    .about-highlight {
+      background: var(--obsidian);
+      color: var(--ivory);
+      padding: 3rem;
+      border-radius: 3px;
+      margin-bottom: 2rem;
+    }
+    .about-highlight h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: var(--gold-light);
+    }
+    .about-highlight p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(249,246,240,0.75);
+    }
+
+    .compliance-badge {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 3px;
+      background: var(--ivory);
+    }
+    .compliance-badge i {
+      font-size: 1.5rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .compliance-badge-text { font-size: 0.9rem; color: var(--mid); line-height: 1.5; }
+    .compliance-badge-text strong { color: var(--obsidian); display: block; margin-bottom: 2px; }
+
+    /* ── PRODUCTS SECTION ── */
+    .products-section { background: var(--ivory); }
+
+    .products-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+      border: 1.5px solid var(--border);
+    }
+
+    .product-card {
+      background: var(--warm-white);
+      padding: 2.5rem 2rem;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .product-card:hover {
+      background: var(--obsidian);
+      color: var(--ivory);
+    }
+
+    .product-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .product-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--obsidian);
+      transition: var(--transition);
+    }
+    .product-card:hover h3 { color: var(--gold-light); }
+
+    .product-card p {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    .product-card:hover p { color: rgba(249,246,240,0.6); }
+
+    .product-meta { display: flex; flex-direction: column; gap: 0.4rem; }
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      transition: var(--transition);
+    }
+    .product-card:hover .meta-row { color: rgba(249,246,240,0.5); }
+    .meta-row i { color: var(--gold); font-size: 0.7rem; width: 14px; }
+    .product-card:hover .meta-row i { color: var(--gold-light); }
+
+    /* ── HOW WE OPERATE ── */
+    .operate-section { background: var(--warm-white); }
+
+    .operate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .steps-list { margin-top: 3rem; }
+
+    .step-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .step-item:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 50px;
+      transition: var(--transition);
+    }
+    .step-item:hover .step-num { color: var(--gold-pale); }
+
+    .step-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--obsidian);
+    }
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .operate-visual {
+      background: var(--obsidian);
+      padding: 3.5rem;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .operate-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(184,146,42,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .operate-visual h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+    }
+
+    .flow-arrow-list { list-style: none; }
+    .flow-arrow-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.88rem;
+      color: rgba(249,246,240,0.75);
+    }
+    .flow-arrow-list li:last-child { border-bottom: none; }
+    .flow-arrow-list li i { color: var(--gold); flex-shrink: 0; }
+    .flow-arrow-list strong { color: var(--ivory); }
+
+    /* ── MARKETPLACE SECTION ── */
+    .marketplace-section { background: var(--ivory); }
+
+    .marketplace-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .marketplace-card {
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .marketplace-card:hover { border-color: var(--gold-light); box-shadow: 0 8px 30px rgba(184,146,42,0.08); }
+
+    .mp-header {
+      padding: 2rem 2.5rem;
+      background: var(--warm-white);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mp-logo {
+      width: 52px; height: 52px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem; color: #fff;
+      flex-shrink: 0;
+    }
+    .mp-logo.amazon { background: #FF9900; }
+    .mp-logo.noon { background: #FEEE00; color: #333; }
+
+    .mp-name { font-weight: 700; font-size: 1rem; color: var(--obsidian); }
+    .mp-url { font-size: 0.8rem; color: var(--gold); text-decoration: none; margin-top: 2px; display: block; }
+    .mp-url:hover { text-decoration: underline; }
+
+    .mp-body { padding: 2rem 2.5rem; }
+    .mp-detail { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .mp-detail i { color: var(--gold); font-size: 0.85rem; margin-top: 3px; flex-shrink: 0; }
+    .mp-detail-text { font-size: 0.88rem; color: var(--mid); line-height: 1.5; }
+    .mp-detail-text strong { color: var(--obsidian); }
+
+    /* ── SOURCING SECTION ── */
+    .sourcing-section { background: var(--warm-white); }
+
+    .sourcing-intro {
+      max-width: 700px;
+      margin-bottom: 5rem;
+    }
+
+    .sourcing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .source-card {
+      background: var(--warm-white);
+      padding: 2.5rem 1.75rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .source-card:hover { background: var(--obsidian); }
+
+    .source-flag {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .source-country {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--obsidian);
+      transition: var(--transition);
+    }
+    .source-card:hover .source-country { color: var(--gold-light); }
+    .source-region {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+    .source-card:hover .source-region { color: rgba(249,246,240,0.4); }
+
+    .quality-badges {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .quality-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 2px;
+      background: var(--ivory);
+      transition: var(--transition);
+    }
+    .quality-badge:hover { border-color: var(--gold-light); }
+    .quality-badge i { color: var(--gold); }
+    .quality-badge-text { font-size: 0.88rem; font-weight: 600; color: var(--obsidian); }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section { background: var(--obsidian); color: var(--ivory); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .contact-section .section-eyebrow { color: var(--gold-light); }
+    .contact-section .section-eyebrow::before { background: var(--gold-light); }
+    .contact-section h2.sec-title { color: var(--ivory); }
+    .contact-section h2.sec-title em { color: var(--gold-light); }
+    .contact-section .sec-desc { color: rgba(249,246,240,0.6); }
+
+    .contact-details { margin-top: 3rem; }
+    .contact-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row i {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 18px;
+    }
+    .contact-row-text { font-size: 0.9rem; color: rgba(249,246,240,0.7); line-height: 1.6; }
+    .contact-row-text strong { color: var(--ivory); display: block; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+    .contact-row-text a { color: var(--gold-light); text-decoration: none; }
+
+    .contact-form { margin-top: 1rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(249,246,240,0.4);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      color: var(--ivory);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(249,246,240,0.25); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+    }
+    .form-group select option { background: var(--charcoal); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-gold {
+      width: 100%;
+      background: var(--gold);
+      color: var(--obsidian);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    .whatsapp-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-top: 1.25rem;
+      transition: var(--transition);
+      justify-content: center;
+    }
+    .whatsapp-strip:hover { background: #1daa54; }
+    .whatsapp-strip i { font-size: 1.1rem; }
+
+    /* ── MAP EMBED ── */
+    .map-section { background: var(--ivory); padding: 0; }
+    .map-wrapper {
+      height: 380px;
+      overflow: hidden;
+      filter: grayscale(0.2) contrast(1.05);
+      border-top: 3px solid var(--gold);
+    }
+    .map-wrapper iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #080808;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .logo-name { color: var(--ivory); font-size: 1.35rem; }
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.7;
+      margin-top: 0.75rem;
+      max-width: 300px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: var(--transition);
+      line-height: 1.5;
+    }
+    .footer-col a:hover { color: rgba(255,255,255,0.8); }
+
+    .footer-license {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 2px;
+      padding: 1rem 1.5rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-license i { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p, .footer-bottom a {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.2);
+      text-decoration: none;
+    }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── PRIVACY POLICY MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--warm-white);
+      border-radius: 4px;
+      padding: 3rem;
+      max-width: 680px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      background: none; border: none;
+      cursor: pointer; font-size: 1.25rem;
+      color: var(--mid);
+    }
+    .modal-box h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-box h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+    .modal-box p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; margin-bottom: 0.75rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 5rem 2rem 3rem; text-align: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-stat-strip { max-width: 400px; }
+      .hero-right { min-height: 45vw; }
+      .about-grid, .operate-grid, .contact-grid, .marketplace-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .sourcing-grid { grid-template-columns: 1fr 1fr; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 72px; left: 0; width: 100%; background: var(--ivory); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.85rem 2.5rem; width: 100%; }
+      .hamburger { display: block; }
+      .hero-stat-strip { grid-template-columns: 1fr; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:last-child { border-bottom: none; }
+      .products-grid { grid-template-columns: 1fr; }
+      .sourcing-grid { grid-template-columns: 1fr 1fr; }
+      .about-info-block { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      section { padding: 5rem 0; }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-main">EYELY</span>
-                <span class="logo-sub">BUSINESS SOLUTIONS</span>
-            </a>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#why-choose-us" class="nav-link">Why Us</a>
-                <a href="#stats" class="nav-link">Impact</a>
-                <a href="#contact" class="nav-btn">Get Started</a>
-            </nav>
-            <button class="mobile-toggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <section class="hero-section">
-        <div class="hero-bg-glow"></div>
-        <div class="hero-container">
-            <span class="hero-badge"><i class="fa-solid fa-globegold gold-icon"></i> Est. 2025 | Dubai, UAE</span>
-            <h1 class="hero-title">Empowering International Trade & <span class="text-gradient-gold">Business Growth</span></h1>
-            <p class="hero-subtitle">We seamlessly navigate global markets, optimize high-tier operations, and engineer international partnerships to scale your enterprise with absolute confidence.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Initiate Briefing</a>
-                <a href="#services" class="btn-secondary">Explore Solutions</a>
-            </div>
-        </div>
-        <div class="hero-scroller">
-            <div class="mouse-icon"><div class="wheel"></div></div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-    <div class="container">
-        <div class="grid-2">
-            
-            <div class="about-content">
-                <span class="section-tag">Corporate Profile</span>
-                <h2>Architecting Global Corporate Expansion</h2>
-                <p>We specialize in providing customized international trade and business growth solutions for companies looking to expand globally. Our experts help businesses navigate complex global markets, optimize multi-channel operations, improve cross-border partnerships, and scale internationally with confidence.</p>
-                <div class="about-features">
-                    <div class="about-feature-item">
-                        <i class="fa-solid fa-building-shield"></i>
-                        <div>
-                            <h4>UAE Market Anchorage</h4>
-                            <p>Leveraging Sharjah and Dubai's strategic trade crossroad to connect East & West.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-visual">
-                <div class="executive-image-container">
-                    <div class="glass-card premium-showcase-overlay">
-                        <!-- <div class="showcase-line"></div> -->
-                        <!-- <h3>EYELY Advantage</h3> -->
-                        <!-- <p class="gold-text">Global Connectivity, Local Precision.</p> -->
-                    </div>
-                    <img src="images/executive.jpg" alt="Eyely FZE Emirati Business Executive" class="executive-img" loading="lazy">
-                </div>
-            </div>
-
-        </div>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo-wrap">
+        <span class="logo-name">EYELY <span>STORE</span></span>
+        <span class="logo-tag">Premium Eyewear Trading — UAE</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#how-we-operate">How We Work</a>
+        <a href="#where-to-buy">Buy Online</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-</section>
+  </header>
 
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Suite</span>
-                <h2>Bespoke Business Architecture</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>International Trade Consulting</h3>
-                    <p>Strategic macro-market analysis to position your trade routes competitively.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-ship"></i></div>
-                    <h3>Import & Export Support</h3>
-                    <p>Seamless customs compliance, logistical optimization, and freight handling guidance.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-arrows-to-dot"></i></div>
-                    <h3>Business Expansion Strategy</h3>
-                    <p>Engineered blueprinting to expand structural assets into highly profitable territories.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-landmark"></i></div>
-                    <h3>UAE Market Guidance</h3>
-                    <p>Utilizing elite corporate framework provisions unique to the UAE trade ecosystems.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
-                    <h3>Operations Optimization</h3>
-                    <p>Streamlining supply chains and corporate architecture to scale with minimal friction.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
-                    <h3>Global Partnership Solutions</h3>
-                    <p>Connecting enterprise leaders with high-net-worth international trade entities.</p>
-                </div>
-                <div class="service-card glass-card full-width-card">
-                    <div class="icon-box"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Business Growth Consulting</h3>
-                    <p>End-to-end legacy-building through performance diagnostics and continuous capital enhancement strategies.</p>
-                </div>
-            </div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <span class="hero-badge"><i class="fa-solid fa-store"></i>&nbsp; Est. 2025 &nbsp;|&nbsp; SPC Freezone, Sharjah</span>
+      <h1 class="hero-title">
+        Premium Eyewear,<br>
+        <em>Delivered Across</em><br>
+        the UAE
+      </h1>
+      <p class="hero-sub">
+        UAE-registered trading company specialising in the import and online distribution of eyewear frames, sunglasses, and optical accessories — available on Amazon.ae and Noon.com.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-dark">View Products</a>
+        <a href="#where-to-buy" class="btn-outline">Shop Online</a>
+      </div>
+
+      <div class="hero-stat-strip">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5+</div>
+          <div class="hero-stat-lbl">Product Categories</div>
         </div>
-    </section>
-
-    <section id="why-choose-us" class="why-section">
-        <div class="container">
-            <div class="grid-2">
-                <div class="why-visual">
-                    <div class="abstract-shield">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>SECURE SCALING</span>
-                    </div>
-                </div>
-                <div class="why-content">
-                    <span class="section-tag">Why EYELY</span>
-                    <h2>Uncompromising Excellence. Borderless Vision.</h2>
-                    <ul class="why-list">
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Elite Corporate Network:</strong> Instant alignment with global regulatory standards.</div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Tailored Trade Blueprints:</strong> No generic solutions. Pure custom corporate strategy.</div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Risk Mitigation:</strong> Advanced geopolitical market forecasting.</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-lbl">Major UAE Platforms</div>
         </div>
-    </section>
-
-    <section id="stats" class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="100">0</div>
-                    <div class="stat-label">Global Trade Corridors</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="250">0</div>
-                    <div class="stat-label">Enterprise Partners Optimized</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="15">0</div>
-                    <div class="stat-label">Years Combined Expertise</div>
-                </div>
-            </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">UAE</div>
+          <div class="hero-stat-lbl">Registered & Licensed</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section class="showcase-section">
-        <div class="container">
-            <div class="glass-card showcase-banner">
-                <div class="showcase-overlay"></div>
-                <h2>Connecting UAE Hubs To Global Markets</h2>
-                <p>From modern free zones to historic maritime trade routes, we orchestrate seamless passage for world-class commodities and enterprise service systems.</p>
-            </div>
+    <div class="hero-right">
+      <div class="img-mosaic" style="display:grid;grid-template-rows:1fr 1fr;gap:4px;height:100%;padding:4px;">
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:4px;">
+          <!-- Eyewear frames display — optical store -->
+          <div style="overflow:hidden;position:relative;">
+            <img
+              src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=900&q=85&fit=crop"
+              alt="Premium eyewear frames collection"
+              style="width:100%;height:100%;object-fit:cover;display:block;min-height:220px;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <div style="position:absolute;bottom:14px;left:14px;background:rgba(14,14,14,0.72);backdrop-filter:blur(8px);color:#F9F6F0;padding:6px 12px;border-radius:2px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Eyewear Frames</div>
+          </div>
+          <!-- Sunglasses close-up -->
+          <div style="overflow:hidden;position:relative;">
+            <img
+              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=85&fit=crop"
+              alt="Luxury sunglasses"
+              style="width:100%;height:100%;object-fit:cover;display:block;min-height:220px;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <div style="position:absolute;bottom:14px;left:14px;background:rgba(14,14,14,0.72);backdrop-filter:blur(8px);color:#F9F6F0;padding:6px 12px;border-radius:2px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Sunglasses</div>
+          </div>
         </div>
-    </section>
-
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Endorsements</span>
-                <h2>Trusted by Global Executives</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-card">
-                    <p class="testimonial-text">"EYELY Business Solutions completely transformed our approach to Middle Eastern distribution channels. Exceptional precision."</p>
-                    <div class="testimonial-user">
-                        <div>
-                            <h4>Marcus Vance</h4>
-                            <span class="user-title">Managing Director, V&M Logistics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card glass-card">
-                    <p class="testimonial-text">"Their profound clarity on UAE framework compliance saved us months of organizational planning. An essential corporate asset."</p>
-                    <div class="testimonial-user">
-                        <div>
-                            <h4>Aisha Al Mansoori</h4>
-                            <span class="user-title">Chief Operating Officer, Apex Global</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:4px;">
+          <!-- Optical accessories -->
+          <div style="overflow:hidden;position:relative;">
+            <img
+              src="https://images.unsplash.com/photo-1508296695146-257a814070b4?w=500&q=85&fit=crop"
+              alt="Optical accessories"
+              style="width:100%;height:100%;object-fit:cover;display:block;min-height:220px;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <div style="position:absolute;bottom:14px;left:14px;background:rgba(14,14,14,0.72);backdrop-filter:blur(8px);color:#F9F6F0;padding:6px 12px;border-radius:2px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Accessories</div>
+          </div>
+          <!-- Sports eyewear / reading glasses -->
+          <div style="overflow:hidden;position:relative;">
+            <img
+              src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=900&q=85&fit=crop"
+              alt="Sports performance eyewear sunglasses"
+              style="width:100%;height:100%;object-fit:cover;display:block;min-height:220px;transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.05)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <div style="position:absolute;bottom:14px;left:14px;background:rgba(14,14,14,0.72);backdrop-filter:blur(8px);color:#F9F6F0;padding:6px 12px;border-radius:2px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Sports Eyewear</div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Inquiries</span>
-                <h2>Initiate Global Transformation</h2>
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left fade-up">
+          <span class="section-eyebrow">Company Profile</span>
+          <h2 class="sec-title">UAE-Registered<br><em>Eyewear Trading</em><br>Company</h2>
+          <p class="sec-desc">
+            EYELY Store is a UAE-registered trading company based in SPC Free Zone, Sharjah, specialising in the import and online distribution of eyewear frames, sunglasses, and optical accessories. We supply quality eyewear products to UAE consumers through Amazon.ae and Noon.com, sourcing directly from verified international manufacturers. Our business is built on transparent supply chains, quality assurance, and compliance with UAE trade regulations.
+          </p>
+
+          <div class="about-info-block">
+            <div class="info-card">
+              <div class="info-card-label">Company Name</div>
+              <div class="info-card-value">EYELY Store FZE</div>
             </div>
-            <div class="grid-2">
-                <div class="contact-form-container glass-card">
-                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Inquiry securely received. Our executive consultants will contact you within 12 business hours.');">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required placeholder="e.g., Tariq Ahmad">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Corporate Email</label>
-                            <input type="email" id="email" required placeholder="tariq@enterprise.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Scope of Inquiry</label>
-                            <textarea id="message" rows="4" required placeholder="Describe your trade or expansion targets..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary form-submit">Transmit Corporate Briefing</button>
-                    </form>
-                    <div class="contact-divider">OR</div>
-                    <a href="https://wa.me/80077239" target="_blank" class="whatsapp-cta">
-                        <i class="fa-brands fa-whatsapp"></i> Chat Live with UAE Trade Expert
-                    </a>
-                </div>
-                <div class="map-container glass-card">
-    <iframe
+            <div class="info-card">
+              <div class="info-card-label">License Type</div>
+              <div class="info-card-value">General Trading License</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-label">Registered In</div>
+              <div class="info-card-value">SPC Free Zone, Sharjah, UAE</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-label">Business Activity</div>
+              <div class="info-card-value">Import & Online Marketplace Trading of Eyewear</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-label">Operating Channels</div>
+              <div class="info-card-value">
+                <a href="https://amazon.ae" target="_blank">Amazon.ae</a> &amp;
+                <a href="https://noon.com" target="_blank">Noon.com</a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-label">Year Established</div>
+              <div class="info-card-value">2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right fade-up">
+          <div class="about-highlight" style="position:relative;overflow:hidden;min-height:220px;">
+            <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=800&q=80&fit=crop" alt="Eyewear collection" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;z-index:0;">
+            <div style="position:relative;z-index:1;">
+              <h3>Our Mission</h3>
+              <p>To make quality eyewear accessible to every UAE consumer through reliable online channels, backed by verified international suppliers and full compliance with UAE trade and import regulations.</p>
+            </div>
+          </div>
+          <div class="compliance-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="compliance-badge-text">
+              <strong>UAE Trade License Verified</strong>
+              Licensed under SPC Free Zone — Sharjah, United Arab Emirates. All imports cleared through official UAE customs with proper documentation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="products-intro fade-up">
+        <div>
+          <span class="section-eyebrow">Our Products</span>
+          <h2 class="sec-title">What We <em>Trade</em></h2>
+        </div>
+        <p class="sec-desc" style="max-width:380px;">All products imported with official UAE customs documentation from verified international manufacturers. Matching our SPC Freezone general trading license activity.</p>
+      </div>
+
+      <div class="products-grid fade-up">
+
+        <div class="product-card">
+          <div class="product-icon"><i class="fa-solid fa-glasses"></i></div>
+          <h3>Eyewear Frames</h3>
+          <p>Optical frames for prescription lenses — men's, women's, and unisex styles in a variety of designs and finishes.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-info"></i> Material: TR90, Acetate, Stainless Steel</div>
+            <div class="meta-row"><i class="fa-solid fa-globe"></i> Origin: China (Wenzhou/Shenzhen), South Korea</div>
+            <div class="meta-row"><i class="fa-solid fa-user"></i> Customer: UAE retail consumers online</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon"><i class="fa-solid fa-sun"></i></div>
+          <h3>Sunglasses</h3>
+          <p>UV protection sunglasses across fashion and sport categories — suitable for the UAE climate and lifestyle.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-info"></i> Spec: UV400 lens protection</div>
+            <div class="meta-row"><i class="fa-solid fa-globe"></i> Origin: China, South Korea, Italy</div>
+            <div class="meta-row"><i class="fa-solid fa-user"></i> Customer: UAE retail consumers online</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Reading Glasses</h3>
+          <p>Non-prescription magnifying glasses for everyday use — OTC consumer product available in multiple strengths.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-info"></i> Type: Non-prescription / OTC</div>
+            <div class="meta-row"><i class="fa-solid fa-globe"></i> Origin: China, Taiwan</div>
+            <div class="meta-row"><i class="fa-solid fa-user"></i> Customer: UAE retail consumers online</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Optical Accessories</h3>
+          <p>Cases, cleaning kits, lens cloths, chains, and repair kits — all the essentials to accompany eyewear purchases.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-info"></i> Items: Cases, cloths, repair kits</div>
+            <div class="meta-row"><i class="fa-solid fa-globe"></i> Origin: China, South Korea</div>
+            <div class="meta-row"><i class="fa-solid fa-user"></i> Customer: UAE retail consumers online</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon"><i class="fa-solid fa-person-running"></i></div>
+          <h3>Sports Eyewear</h3>
+          <p>Protective and performance eyewear designed for outdoor activities and active lifestyles in the UAE.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-info"></i> Spec: Impact-resistant, UV400</div>
+            <div class="meta-row"><i class="fa-solid fa-globe"></i> Origin: China, South Korea</div>
+            <div class="meta-row"><i class="fa-solid fa-user"></i> Customer: UAE retail consumers online</div>
+          </div>
+        </div>
+
+        <div class="product-card" style="background: var(--cream);">
+          <div class="product-icon"><i class="fa-solid fa-truck-fast" style="color:var(--accent-blue);"></i></div>
+          <h3>Delivery via Amazon.ae &amp; Noon.com</h3>
+          <p>All products listed and fulfilled through UAE's leading e-commerce marketplaces. Fast, reliable delivery to all UAE Emirates.</p>
+          <div class="product-meta">
+            <div class="meta-row"><i class="fa-solid fa-circle-check" style="color:green;"></i> Amazon.ae — Active Seller</div>
+            <div class="meta-row"><i class="fa-solid fa-circle-check" style="color:green;"></i> Noon.com — Active Seller</div>
+            <div class="meta-row"><i class="fa-solid fa-shield-halved"></i> Marketplace-verified seller account</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE OPERATE -->
+  <section class="operate-section" id="how-we-operate">
+    <div class="container">
+      <div class="operate-grid">
+        <div class="fade-up">
+          <span class="section-eyebrow">Business Model</span>
+          <h2 class="sec-title">How We <em>Operate</em></h2>
+          <p class="sec-desc">Our transaction flow is straightforward and transparent — from sourcing internationally verified products to delivering them to UAE consumers through regulated marketplace platforms.</p>
+
+          <div class="steps-list">
+            <div class="step-item">
+              <div class="step-num">01</div>
+              <div class="step-content">
+                <h4>Source from International Manufacturers</h4>
+                <p>Products sourced directly from verified manufacturers in China, South Korea, Italy, and Taiwan with signed purchase agreements on file.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">02</div>
+              <div class="step-content">
+                <h4>Import via UAE Customs Clearance</h4>
+                <p>All goods imported through official UAE customs channels with complete documentation — invoices, packing lists, certificates of origin.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">03</div>
+              <div class="step-content">
+                <h4>List on Amazon.ae &amp; Noon.com</h4>
+                <p>Products listed on verified seller accounts on UAE's leading e-commerce marketplaces, with full product descriptions and compliance labelling.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">04</div>
+              <div class="step-content">
+                <h4>UAE Consumer Purchases Online</h4>
+                <p>UAE consumers browse and purchase via Amazon.ae or Noon.com — both platforms manage payment collection and consumer protection.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">05</div>
+              <div class="step-content">
+                <h4>Marketplace Revenue Settlement</h4>
+                <p>Amazon.ae and Noon.com transfer collected revenue to the company's UAE bank account on a regular settlement cycle.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="operate-visual fade-up">
+          <h3>Transaction Flow at a Glance</h3>
+          <ul class="flow-arrow-list">
+            <li><i class="fa-solid fa-arrow-right"></i><span><strong>Supplier Invoice</strong> → Purchase order confirmed with international manufacturer</span></li>
+            <li><i class="fa-solid fa-arrow-right"></i><span><strong>UAE Import</strong> → Standard customs clearance, all documentation maintained</span></li>
+            <li><i class="fa-solid fa-arrow-right"></i><span><strong>Marketplace Listing</strong> → Products active on Amazon.ae / Noon.com</span></li>
+            <li><i class="fa-solid fa-arrow-right"></i><span><strong>Consumer Purchase</strong> → End customer buys via UAE marketplace</span></li>
+            <li><i class="fa-solid fa-arrow-right"></i><span><strong>Revenue Settlement</strong> → Marketplace transfers to company UAE bank account</span></li>
+          </ul>
+
+          <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Platform Compliance</div>
+            <p style="font-size:0.85rem;color:rgba(249,246,240,0.55);line-height:1.7;">Amazon.ae and Noon.com conduct their own seller verification. Being an active seller on both platforms demonstrates our business legitimacy and operational readiness.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE TO BUY -->
+  <section class="marketplace-section" id="where-to-buy">
+    <div class="container">
+      <div class="fade-up">
+        <span class="section-eyebrow">Where to Buy</span>
+        <h2 class="sec-title">Find Us <em>Online</em></h2>
+        <p class="sec-desc">Our products are available on the UAE's two most trusted e-commerce platforms. Both marketplaces offer verified seller protection, UAE-wide delivery, and secure payment processing.</p>
+      </div>
+
+      <div class="marketplace-grid fade-up">
+        <div class="marketplace-card">
+          <div class="mp-header">
+            <div class="mp-logo amazon">a</div>
+            <div>
+              <div class="mp-name">Amazon.ae</div>
+              <a href="https://amazon.ae" target="_blank" class="mp-url">amazon.ae → Visit Our Store</a>
+            </div>
+          </div>
+          <div class="mp-body">
+            <div class="mp-detail">
+              <i class="fa-solid fa-circle-check"></i>
+              <div class="mp-detail-text"><strong>Active Seller Account</strong> — Verified and live on Amazon.ae marketplace</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-tag"></i>
+              <div class="mp-detail-text"><strong>Categories Listed:</strong> Eyewear Frames, Sunglasses, Optical Accessories</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-truck"></i>
+              <div class="mp-detail-text">UAE-wide delivery to all 7 Emirates via Amazon logistics</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div class="mp-detail-text">Buyer protection, secure payments, and Amazon A-to-Z guarantee</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="marketplace-card">
+          <div class="mp-header">
+            <div class="mp-logo noon">N</div>
+            <div>
+              <div class="mp-name">Noon.com</div>
+              <a href="https://noon.com" target="_blank" class="mp-url">noon.com → Visit Our Store</a>
+            </div>
+          </div>
+          <div class="mp-body">
+            <div class="mp-detail">
+              <i class="fa-solid fa-circle-check"></i>
+              <div class="mp-detail-text"><strong>Active Seller Account</strong> — Verified and live on Noon.com UAE marketplace</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-tag"></i>
+              <div class="mp-detail-text"><strong>Categories Listed:</strong> Eyewear Frames, Sunglasses, Optical Accessories</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-truck"></i>
+              <div class="mp-detail-text">UAE-wide delivery via Noon's express fulfillment network</div>
+            </div>
+            <div class="mp-detail">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div class="mp-detail-text">Buyer protection, verified payments, and Noon marketplace guarantee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCING & QUALITY -->
+  <section class="sourcing-section" id="sourcing">
+    <div class="container">
+      <div class="sourcing-intro fade-up">
+        <span class="section-eyebrow">Sourcing &amp; Quality</span>
+        <h2 class="sec-title">Traceable Supply Chain.<br><em>Verified Suppliers.</em></h2>
+        <p class="sec-desc">All products are sourced from legitimate, verified international manufacturers through signed purchase agreements. Every shipment enters the UAE through official customs with complete documentation on file.</p>
+      </div>
+
+      <div class="sourcing-grid fade-up">
+        <div class="source-card">
+          <div class="source-flag">🇨🇳</div>
+          <div class="source-country">China</div>
+          <div class="source-region">Wenzhou · Shenzhen</div>
+        </div>
+        <div class="source-card">
+          <div class="source-flag">🇰🇷</div>
+          <div class="source-country">South Korea</div>
+          <div class="source-region">Premium Optical Frames</div>
+        </div>
+        <div class="source-card">
+          <div class="source-flag">🇮🇹</div>
+          <div class="source-country">Italy</div>
+          <div class="source-region">Designer Eyewear</div>
+        </div>
+        <div class="source-card">
+          <div class="source-flag">🇹🇼</div>
+          <div class="source-country">Taiwan</div>
+          <div class="source-region">Optical Components</div>
+        </div>
+      </div>
+
+      <div class="quality-badges fade-up">
+        <div class="quality-badge"><i class="fa-solid fa-certificate"></i><div class="quality-badge-text">CE Marked Products</div></div>
+        <div class="quality-badge"><i class="fa-solid fa-sun"></i><div class="quality-badge-text">UV400 Certified</div></div>
+        <div class="quality-badge"><i class="fa-solid fa-industry"></i><div class="quality-badge-text">ISO-Compliant Manufacturers</div></div>
+        <div class="quality-badge"><i class="fa-solid fa-file-contract"></i><div class="quality-badge-text">Signed Supplier Agreements</div></div>
+        <div class="quality-badge"><i class="fa-solid fa-file-invoice"></i><div class="quality-badge-text">Full UAE Customs Documentation</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="fade-up">
+          <span class="section-eyebrow">Get in Touch</span>
+          <h2 class="sec-title">Contact <em>Our Team</em></h2>
+          <p class="sec-desc">We're available Monday to Friday, 9:00 AM – 6:00 PM UAE time. Reach out for product enquiries, wholesale sourcing, or business partnerships.</p>
+
+          <div class="contact-details">
+            <div class="contact-row">
+              <i class="fa-solid fa-building"></i>
+              <div class="contact-row-text">
+                <strong>Company</strong>
+                EYELY Store FZE
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="contact-row-text">
+                <strong>Registered Address</strong>
+                Business Center, SPC Free Zone,<br>Sharjah, United Arab Emirates
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <div class="contact-row-text">
+                <strong>Phone</strong>
+                <a href="tel:+97180077239">+971 800 77239</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="contact-row-text">
+                <strong>Email</strong>
+                <a href="mailto:info@eyelystore.com">info@eyelystore.com</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div class="contact-row-text">
+                <strong>Operating Hours</strong>
+                Monday – Friday, 9:00 AM – 6:00 PM (UAE Time)
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-id-card"></i>
+              <div class="contact-row-text">
+                <strong>SPC Free Zone Trade License No.</strong>
+                [Your SPC License Number Here]
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form fade-up">
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Company (Optional)</label>
+                <input type="text" placeholder="Company name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+971 XX XXX XXXX">
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select>
+                <option value="">Select enquiry type</option>
+                <option>Product Enquiry</option>
+                <option>Wholesale / Bulk Order</option>
+                <option>Business Partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Describe your enquiry or requirements..." required></textarea>
+            </div>
+            <button type="submit" class="btn-gold">Send Enquiry</button>
+          </form>
+          <a href="https://wa.me/97180077239" target="_blank" class="whatsapp-strip">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp — UAE Trade Expert
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-wrapper">
+      <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.056981862006!2d55.45602387538532!3d25.31990908384325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f006a90d7a7%3A0xdc16cfd62e4d43f7!2sEyely%20Business%20Solution!5e0!3m2!1sen!2sae!4v1747980000000!5m2!1sen!2sae"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy">
-    </iframe>
-</div>
-            </div>
-        </div>
-    </section>
+        loading="lazy"
+        allowfullscreen="">
+      </iframe>
+    </div>
+  </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <span class="logo-main">EYELY</span>
-                    <span class="logo-sub">BUSINESS SOLUTIONS</span>
-                    <p>Empowering International Trade & Business Growth from the heart of the United Arab Emirates.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <a href="#about">Corporate Profile</a>
-                    <a href="#services">Our Suite</a>
-                    <a href="#why-choose-us">Strategic Value</a>
-                </div>
-                <div class="footer-contact-info">
-                    <h4>Corporate Office</h4>
-                    <p><i class="fa-solid fa-building gold-text"></i> <strong>Eyely FZE</strong></p>
-                    <p><i class="fa-solid fa-location-dot gold-text"></i> Business Center, SPC Freezone, Sharjah, United Arab Emirates</p>
-                    <p><i class="fa-solid fa-envelope gold-text"></i> help.eyely.store@outlook.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EYELY FZE. All Corporate Rights Reserved. Developed to Global Institutional Standards.</p>
-            </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo-wrap"><span class="logo-name">EYELY <span>STORE</span></span></a>
+          <p>Empowering UAE consumers with quality eyewear from verified international suppliers. Registered and licensed under SPC Free Zone, Sharjah, United Arab Emirates.</p>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <a href="#about">Company Profile</a>
+          <a href="#products">Our Products</a>
+          <a href="#how-we-operate">How We Operate</a>
+          <a href="#where-to-buy">Where to Buy</a>
+          <a href="#sourcing">Sourcing &amp; Quality</a>
+        </div>
+        <div class="footer-col">
+          <h5>Platforms</h5>
+          <a href="https://amazon.ae" target="_blank">Amazon.ae Store</a>
+          <a href="https://noon.com" target="_blank">Noon.com Store</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>SPC Free Zone, Sharjah, UAE</p>
+          <a href="mailto:info@eyelystore.com">info@eyelystore.com</a>
+          <a href="tel:+97180077239">+971 800 77239</a>
+          <p>Mon–Fri, 9AM–6PM UAE</p>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="footer-license">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>EYELY Store FZE &nbsp;|&nbsp; SPC Free Zone Trade License No. [XXXXX] &nbsp;|&nbsp; Sharjah, United Arab Emirates &nbsp;|&nbsp;
+        <a href="#privacy" onclick="openPrivacy(event)" style="color:var(--gold-light);text-decoration:none;">Privacy Policy</a></span>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 EYELY Store FZE. All Rights Reserved. Registered in SPC Free Zone, Sharjah, UAE.</p>
+        <a href="#privacy" onclick="openPrivacy(event)">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closePrivacy()"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Privacy Policy</h2>
+      <p><strong>Last Updated: 2025</strong></p>
+      <p>EYELY Store FZE ("we", "our", "the Company") is committed to protecting the privacy of our website visitors and customers. This Privacy Policy explains how we collect, use, and protect your information.</p>
+      <h3>1. Information We Collect</h3>
+      <p>We may collect personal information you voluntarily provide through our contact form, including your name, email address, phone number, and message content. We do not collect payment information — all transactions are processed securely by Amazon.ae or Noon.com.</p>
+      <h3>2. How We Use Your Information</h3>
+      <p>Information collected via our contact form is used solely to respond to your enquiry. We do not sell, trade, or transfer your personal information to third parties.</p>
+      <h3>3. Marketplace Platforms</h3>
+      <p>When you purchase through Amazon.ae or Noon.com, your transactions are governed by those platforms' respective privacy policies and terms of service.</p>
+      <h3>4. Cookies</h3>
+      <p>This website may use basic cookies to ensure functionality. No tracking or advertising cookies are used.</p>
+      <h3>5. Data Security</h3>
+      <p>We take appropriate measures to protect your personal information from unauthorised access, alteration, or disclosure.</p>
+      <h3>6. Contact</h3>
+      <p>For any privacy-related questions, contact us at: <a href="mailto:info@eyelystore.com">info@eyelystore.com</a></p>
+      <p>EYELY Store FZE, Business Center, SPC Free Zone, Sharjah, United Arab Emirates.</p>
+    </div>
+  </div>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.style.background = 'rgba(249,246,240,0.97)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+      } else {
+        navbar.style.background = 'rgba(249,246,240,0.92)';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+
+    // Scroll fade-up animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Form submit
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-gold');
+      btn.textContent = 'Enquiry Sent ✓';
+      btn.style.background = '#27ae60';
+      setTimeout(() => {
+        btn.textContent = 'Send Enquiry';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3500);
+    }
+
+    // Privacy modal
+    function openPrivacy(e) { e.preventDefault(); document.getElementById('privacyModal').classList.add('open'); }
+    function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); }
+    document.getElementById('privacyModal').addEventListener('click', function(e) {
+      if (e.target === this) closePrivacy();
+    });
+  </script>
 </body>
 </html>
