@@ -1,290 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EYELY Business Solutions | International Trade & Corporate Growth UAE</title>
-    <meta name="description" content="Empowering International Trade & Business Growth from the UAE. Premium consulting, import/export support, and global expansion strategies.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eyely | Instrument-Grade Eyewear for the Modern Executive</title>
+<meta name="description" content="Eyely curates premium sunglasses for business professionals in the UAE. Browse the catalog, order instantly on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --ink:#0c0e11;
+    --ink-panel:#131619;
+    --ink-card:#16191d;
+    --line:rgba(240,232,216,0.09);
+    --line-strong:rgba(240,232,216,0.16);
+    --copper:#c8925a;
+    --copper-light:#eab97e;
+    --paper:#f0ece2;
+    --paper-dim:#8d887e;
+    --wa:#25d366;
+    --r:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{display:block;max-width:100%;}
+  .container{max-width:1200px;margin:0 auto;padding:0 28px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  ::selection{background:var(--copper);color:var(--ink);}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important; scroll-behavior:auto !important;} }
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- ticker (signature motif) ---------- */
+  .ticker{
+    position:relative;overflow:hidden;background:var(--ink-panel);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:10px 0;white-space:nowrap;
+  }
+  .ticker-track{display:inline-flex;animation:tick 42s linear infinite;}
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+  @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .ticker-item{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.5px;
+    color:var(--paper-dim);padding:0 24px;border-right:1px solid var(--line);
+  }
+  .ticker-item b{color:var(--copper-light);font-weight:600;}
+  .ticker-item .up{color:var(--wa);}
+
+  /* ---------- nav ---------- */
+  .navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    background:rgba(12,14,17,0.86);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:16px 28px;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-dial{width:28px;height:28px;flex-shrink:0;}
+  .logo-text{display:flex;flex-direction:column;line-height:1.05;}
+  .logo-main{font-family:'Fraunces',serif;font-size:1.28rem;font-weight:600;letter-spacing:1px;}
+  .logo-sub{font-size:0.56rem;letter-spacing:2.5px;color:var(--copper);font-weight:600;margin-top:2px;}
+  .nav-menu{display:flex;align-items:center;gap:36px;}
+  .nav-link{position:relative;font-size:0.84rem;font-weight:500;color:var(--paper-dim);transition:color .25s;padding-bottom:3px;}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--copper-light);transition:width .25s;}
+  .nav-link:hover{color:var(--paper);}
+  .nav-link:hover::after{width:100%;}
+  .nav-btn{
+    display:flex;align-items:center;gap:8px;background:var(--wa);color:#08130c;font-weight:700;
+    font-size:0.82rem;padding:9px 16px;border-radius:var(--r);transition:transform .2s, filter .2s;
+  }
+  .nav-btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:130px 0 0;}
+  .hero-grid{display:grid;grid-template-columns:1fr 0.92fr;gap:0;align-items:stretch;min-height:640px;}
+  .hero-copy{padding:70px 56px 70px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-size:0.7rem;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--copper-light);font-weight:600;margin-bottom:24px;
+  }
+  .eyebrow::before{content:"";width:20px;height:1px;background:var(--copper);}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:600;font-size:3.5rem;line-height:1.06;letter-spacing:-1px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{font-style:italic;color:var(--copper-light);font-weight:500;}
+  .hero p.lede{font-size:1.06rem;color:var(--paper-dim);max-width:440px;margin-bottom:36px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+  .btn-primary{
+    background:var(--copper);color:#1a1108;padding:14px 28px;border-radius:var(--r);font-weight:700;font-size:0.88rem;
+    transition:background .25s, transform .2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn-primary:hover{background:var(--copper-light);transform:translateY(-2px);}
+  .btn-secondary{
+    background:transparent;border:1px solid var(--line-strong);color:var(--paper);padding:14px 28px;border-radius:var(--r);
+    font-weight:600;font-size:0.88rem;transition:border-color .25s, background .25s, transform .2s;display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn-secondary:hover{border-color:var(--wa);background:rgba(37,211,102,0.07);transform:translateY(-2px);}
+  .hero-stats{display:flex;gap:36px;padding-top:26px;border-top:1px solid var(--line);}
+  .hero-stat b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;color:var(--copper-light);font-weight:600;}
+  .hero-stat span{font-size:0.72rem;color:var(--paper-dim);letter-spacing:0.4px;}
+
+  .hero-visual{position:relative;}
+  .hero-frame{position:absolute;inset:0;}
+  .hero-frame img{width:100%;height:100%;object-fit:cover;}
+  .hero-frame::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, var(--ink) 0%, rgba(12,14,17,0.15) 22%, transparent 46%), linear-gradient(0deg, rgba(12,14,17,0.55), transparent 40%);
+  }
+  .hero-tag{
+    position:absolute;left:36px;bottom:36px;z-index:3;
+    background:rgba(12,14,17,0.72);backdrop-filter:blur(6px);border:1px solid var(--line-strong);
+    padding:14px 18px;border-radius:var(--r);
+  }
+  .hero-tag .l1{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--paper-dim);letter-spacing:0.5px;}
+  .hero-tag .l2{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--copper-light);font-weight:600;margin-top:3px;}
+
+  /* ---------- section rhythm ---------- */
+  section{padding:100px 0;}
+  .section-header{margin-bottom:52px;}
+  .section-header h2{font-family:'Fraunces',serif;font-weight:600;font-size:2.15rem;letter-spacing:-0.4px;}
+  .section-header p{color:var(--paper-dim);max-width:560px;margin-top:14px;font-size:0.96rem;}
+  .center{text-align:center;}
+  .center .eyebrow{justify-content:center;}
+  .center .eyebrow::before{display:none;}
+  .center .section-header p{margin-left:auto;margin-right:auto;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+  .about-grid p{color:var(--paper-dim);margin-bottom:16px;font-size:0.98rem;}
+  .about-grid p strong{color:var(--paper);font-weight:600;}
+  .card{background:var(--ink-card);border:1px solid var(--line);border-radius:var(--r);padding:32px;}
+  .card-copper{border-left:2px solid var(--copper);}
+  .card h4{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:600;color:var(--copper-light);margin-bottom:12px;}
+  .card p{color:var(--paper-dim);font-size:0.9rem;}
+  .about-figure{margin-top:24px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;}
+  .about-figure img{width:100%;height:100%;object-fit:cover;filter:saturate(0.9);}
+
+  /* ---------- catalog ---------- */
+  .catalog-section{background:linear-gradient(180deg, transparent, rgba(200,146,90,0.03) 45%, transparent);}
+  .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:26px;margin-top:8px;}
+  .product-card{
+    background:var(--ink-card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+    display:flex;flex-direction:column;transition:border-color .3s, transform .3s, box-shadow .3s;
+  }
+  .product-card:hover{
+    border-color:rgba(200,146,90,0.45);transform:translateY(-6px);
+    box-shadow:0 22px 40px -18px rgba(0,0,0,0.55), 0 0 0 1px rgba(200,146,90,0.12);
+  }
+  .product-img-wrapper{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#0a0c0e;padding:14px;}
+  .product-img-wrapper img{width:100%;height:100%;object-fit:cover;border-radius:2px;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
+  .product-card:hover .product-img-wrapper img{transform:scale(1.08);}
+  .frame-code{
+    position:absolute;top:22px;left:22px;z-index:2;background:rgba(12,14,17,0.75);backdrop-filter:blur(4px);
+    color:var(--copper-light);font-size:0.65rem;padding:4px 8px;border-radius:2px;border:1px solid var(--line-strong);letter-spacing:0.5px;
+  }
+  .product-meta{padding:4px 18px 0;flex:1;}
+  .product-meta h3{font-size:1.02rem;font-weight:600;margin-bottom:5px;color:var(--paper);}
+  .product-meta .spec-line{font-size:0.71rem;color:var(--paper-dim);letter-spacing:0.3px;}
+  .product-foot{padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:14px;}
+  .product-price{color:var(--copper-light);font-size:1.05rem;font-weight:600;}
+  .order-btn{
+    display:flex;align-items:center;justify-content:center;gap:7px;background:var(--wa);color:#08130c;font-weight:700;
+    font-size:0.76rem;padding:9px 13px;border-radius:2px;transition:filter .2s, transform .2s;white-space:nowrap;
+  }
+  .order-btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+
+  /* ---------- why ---------- */
+  .why-list{list-style:none;}
+  .why-list li{display:flex;gap:18px;margin-bottom:30px;align-items:flex-start;}
+  .why-icon{
+    width:42px;height:42px;border:1px solid var(--line-strong);border-radius:50%;display:flex;align-items:center;
+    justify-content:center;flex-shrink:0;color:var(--copper-light);font-size:0.95rem;transition:border-color .25s, background .25s;
+  }
+  .why-list li:hover .why-icon{border-color:var(--copper);background:rgba(200,146,90,0.08);}
+  .why-list strong{display:block;margin-bottom:4px;font-size:1.02rem;}
+  .why-list span{color:var(--paper-dim);font-size:0.92rem;}
+
+  /* ---------- how ---------- */
+  .how-section{background:var(--ink-panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+  .step{position:relative;padding:36px 30px;background:var(--ink-card);transition:background .25s;}
+  .step:hover{background:#191d22;}
+  .step-num{font-family:'IBM Plex Mono',monospace;color:var(--copper);font-size:0.8rem;display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+  .step-num::before{content:"";width:22px;height:1px;background:var(--copper);}
+  .step h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:9px;}
+  .step p{color:var(--paper-dim);font-size:0.89rem;}
+
+  /* ---------- gifting ---------- */
+  .banner{
+    position:relative;border:1px solid var(--line);border-radius:var(--r);padding:0;text-align:center;overflow:hidden;
+  }
+  .banner-inner{position:relative;z-index:2;padding:64px 46px;}
+  .banner-bg{position:absolute;inset:0;}
+  .banner-bg img{width:100%;height:100%;object-fit:cover;opacity:0.28;filter:saturate(0.7);}
+  .banner-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, var(--ink) 0%, rgba(12,14,17,0.75) 55%, var(--ink) 100%);}
+  .banner h2{font-family:'Fraunces',serif;font-size:1.85rem;font-weight:600;margin-bottom:16px;}
+  .banner p{max-width:620px;margin:0 auto;color:var(--paper-dim);}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;}
+  .form-group{margin-bottom:18px;}
+  .form-group label{display:block;font-size:0.78rem;color:var(--paper-dim);margin-bottom:8px;font-weight:500;letter-spacing:0.3px;}
+  .form-group input,.form-group textarea{
+    width:100%;background:rgba(255,255,255,0.02);border:1px solid var(--line);padding:13px 14px;color:var(--paper);
+    border-radius:var(--r);font-family:inherit;font-size:0.92rem;transition:border-color .2s;
+  }
+  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--copper);}
+  .contact-divider{text-align:center;margin:20px 0;color:var(--paper-dim);font-size:0.75rem;letter-spacing:1.5px;}
+  .whatsapp-cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--wa);color:var(--wa);
+    padding:14px;border-radius:var(--r);font-weight:700;transition:background .2s, transform .2s;
+  }
+  .whatsapp-cta:hover{background:rgba(37,211,102,0.07);transform:translateY(-2px);}
+  .map-container{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:360px;position:relative;}
+  .map-container iframe{width:100%;height:100%;min-height:360px;border:0;display:block;}
+
+  /* ---------- footer ---------- */
+  .footer{background:#080a0c;border-top:1px solid var(--line);padding:60px 0 28px;font-size:0.88rem;}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1.4fr;gap:48px;margin-bottom:42px;}
+  .footer-brand p{color:var(--paper-dim);margin-top:15px;font-size:0.85rem;max-width:280px;}
+  .footer-links h4,.footer-contact-info h4{font-family:'Fraunces',serif;font-size:0.96rem;margin-bottom:18px;color:var(--copper-light);font-weight:600;}
+  .footer-links a{display:block;color:var(--paper-dim);margin-bottom:10px;font-size:0.85rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--copper-light);}
+  .footer-contact-info p{color:var(--paper-dim);margin-bottom:12px;font-size:0.85rem;display:flex;gap:10px;align-items:flex-start;}
+  .footer-contact-info i{color:var(--copper);margin-top:2px;width:14px;}
+  .footer-bottom{border-top:1px solid var(--line);padding-top:26px;text-align:center;color:var(--paper-dim);font-size:0.78rem;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;min-height:auto;}
+    .hero-visual{height:340px;position:relative;order:-1;}
+    .hero-frame{position:absolute;}
+    .hero-copy{padding:44px 0;}
+    .about-grid,.contact-grid,.footer-top{grid-template-columns:1fr;}
+    .steps-grid{grid-template-columns:1fr;}
+    .nav-menu{display:none;}
+    .hero{padding-top:96px;}
+    .hero h1{font-size:2.3rem;}
+    section{padding:64px 0;}
+  }
+</style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-main">EYELY</span>
-                <span class="logo-sub">BUSINESS SOLUTIONS</span>
-            </a>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#why-choose-us" class="nav-link">Why Us</a>
-                <a href="#stats" class="nav-link">Impact</a>
-                <a href="#contact" class="nav-btn">Get Started</a>
-            </nav>
-            <button class="mobile-toggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
+<header class="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <svg class="logo-dial" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="#c8925a" stroke-width="1.2"/>
+        <circle cx="20" cy="20" r="12.5" stroke="#c8925a" stroke-width="0.6" opacity="0.5"/>
+        <line x1="20" y1="2" x2="20" y2="7" stroke="#c8925a" stroke-width="1.2"/>
+        <line x1="20" y1="33" x2="20" y2="38" stroke="#f0ece2" stroke-width="1" opacity="0.4"/>
+        <line x1="2" y1="20" x2="7" y2="20" stroke="#f0ece2" stroke-width="1" opacity="0.4"/>
+        <line x1="33" y1="20" x2="38" y2="20" stroke="#f0ece2" stroke-width="1" opacity="0.4"/>
+        <circle cx="20" cy="20" r="2" fill="#c8925a"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-main">EYELY</span>
+        <span class="logo-sub">BUSINESS SOLUTIONS</span>
+      </span>
+    </a>
+    <nav class="nav-menu">
+      <a href="#about" class="nav-link">Our Story</a>
+      <a href="#collections" class="nav-link">Catalog</a>
+      <a href="#how-to-order" class="nav-link">How to Order</a>
+      <a href="#gifting" class="nav-link">Corporate Gifting</a>
+      <a href="https://wa.me/971506562016" target="_blank" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+    </nav>
+  </div>
+</header>
 
-    <section class="hero-section">
-        <div class="hero-bg-glow"></div>
-        <div class="hero-container">
-            <span class="hero-badge"><i class="fa-solid fa-building-columns gold-icon"></i> Est. 2025 | Sharjah, UAE</span>
-            <h1 class="hero-title">Empowering International Trade & <span class="text-gradient-gold">Business Growth</span></h1>
-            <p class="hero-subtitle">We seamlessly navigate global markets, optimize high-tier operations, and engineer international partnerships to scale your enterprise with absolute confidence.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Initiate Briefing</a>
-                <a href="#services" class="btn-secondary">Explore Solutions</a>
-            </div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Premium Eyewear · UAE</span>
+        <h1>Precision eyewear for the <em>modern executive</em></h1>
+        <p class="lede">Eyely curates sunglasses built for professionals who lead, negotiate, and make an impression — in the boardroom and beyond. Every frame is checked for UV400 protection before it ships.</p>
+        <div class="hero-actions">
+          <a href="#collections" class="btn-primary"><i class="fa-solid fa-compass"></i> Browse the Catalog</a>
+          <a href="https://wa.me/971506562016" target="_blank" class="btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
         </div>
-        <div class="hero-scroller">
-            <div class="mouse-icon"><div class="wheel"></div></div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>30</b><span>FRAMES IN CATALOG</span></div>
+          <div class="hero-stat"><b>UV400</b><span>CERTIFIED PROTECTION</span></div>
+          <div class="hero-stat"><b>&lt;5min</b><span>WHATSAPP RESPONSE</span></div>
         </div>
-    </section>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="https://images.pexels.com/photos/1548027/pexels-photo-1548027.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Aviator sunglasses, signature Eyely frame">
+        </div>
+        <div class="hero-tag">
+          <div class="l1 mono">FR-002 · AVIATOR</div>
+          <div class="l2">AED 249</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="grid-2">
-                <div class="about-content">
-                    <span class="section-tag">Corporate Profile</span>
-                    <h2>Architecting Global Corporate Expansion</h2>
-                    <p>We specialize in providing customized international trade and business growth solutions for companies looking to expand globally. Our experts help businesses navigate complex global markets, optimize multi-channel operations, improve cross-border partnerships, and scale internationally with confidence.</p>
-                    <div class="about-features">
-                        <div class="about-feature-item">
-                            <i class="fa-solid fa-building-shield"></i>
-                            <div>
-                                <h4>UAE Market Anchorage</h4>
-                                <p>Leveraging Sharjah and Dubai's strategic trade crossroad to connect East & West.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-visual">
-                    <!-- <div class="executive-image-container"> -->
-                        <div class="glass-card premium-showcase-overlay">
-                            <div class="showcase-line"></div>
-                            <!-- <h3>EYELY Advantage</h3>
-                            <p class="gold-text">Global Connectivity, Local Precision.</p> -->
-                        </div>
-                        <img src="images/eyely.png" alt="Eyely FZE Emirati Business Executive" class="executive-img" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Suite</span>
-                <h2>Bespoke Business Architecture</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>International Trade Consulting</h3>
-                    <p>Strategic macro-market analysis to position your trade routes competitively.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-ship"></i></div>
-                    <h3>Import & Export Support</h3>
-                    <p>Seamless customs compliance, logistical optimization, and freight handling guidance.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-arrows-to-dot"></i></div>
-                    <h3>Business Expansion Strategy</h3>
-                    <p>Engineered blueprinting to expand structural assets into highly profitable territories.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-landmark"></i></div>
-                    <h3>UAE Market Guidance</h3>
-                    <p>Utilizing elite corporate framework provisions unique to the UAE trade ecosystems.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
-                    <h3>Operations Optimization</h3>
-                    <p>Streamlining supply chains and corporate architecture to scale with minimal friction.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
-                    <h3>Global Partnership Solutions</h3>
-                    <p>Connecting enterprise leaders with high-net-worth international trade entities.</p>
-                </div>
-                <div class="service-card glass-card full-width-card">
-                    <div class="icon-box"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Business Growth Consulting</h3>
-                    <p>End-to-end legacy-building through performance diagnostics and continuous capital enhancement strategies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="why-choose-us" class="why-section">
-        <div class="container">
-            <div class="grid-2">
-                <div class="why-visual">
-                    <div class="abstract-shield">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>SECURE SCALING</span>
-                    </div>
-                </div>
-                <div class="why-content">
-                    <span class="section-tag">Why EYELY</span>
-                    <h2>Uncompromising Excellence. Borderless Vision.</h2>
-                    <ul class="why-list">
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Elite Corporate Network:</strong> Instant alignment with global regulatory standards.</div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Tailored Trade Blueprints:</strong> No generic solutions. Pure custom corporate strategy.</div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div><strong>Risk Mitigation:</strong> Advanced geopolitical market forecasting.</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stats" class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="100">0</div>
-                    <div class="stat-label">Global Trade Corridors</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="250">0</div>
-                    <div class="stat-label">Enterprise Partners Optimized</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="15">0</div>
-                    <div class="stat-label">Years Combined Expertise</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="showcase-section">
-        <div class="container">
-            <div class="glass-card showcase-banner">
-                <div class="showcase-overlay"></div>
-                <h2>Connecting UAE Hubs To Global Markets</h2>
-                <p>From modern free zones to historic maritime trade routes, we orchestrate seamless passage for world-class commodities and enterprise service systems.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Endorsements</span>
-                <h2>Trusted by Global Executives</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-card">
-                    <p class="testimonial-text">"EYELY Business Solutions completely transformed our approach to Middle Eastern distribution channels. Exceptional precision."</p>
-                    <div class="testimonial-user">
-                        <div>
-                            <h4>Marcus Vance</h4>
-                            <span class="user-title">Managing Director, V&M Logistics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card glass-card">
-                    <p class="testimonial-text">"Their profound clarity on UAE framework compliance saved us months of organizational planning. An essential corporate asset."</p>
-                    <div class="testimonial-user">
-                        <div>
-                            <h4>Aisha Al Mansoori</h4>
-                            <span class="user-title">Chief Operating Officer, Apex Global</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Inquiries</span>
-                <h2>Initiate Global Transformation</h2>
-            </div>
-            <div class="grid-2">
-                <div class="contact-form-container glass-card">
-                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Inquiry securely received. Our executive consultants will contact you within 12 business hours.');">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required placeholder="e.g., Tariq Ahmad">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Corporate Email</label>
-                            <input type="email" id="email" required placeholder="tariq@enterprise.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Scope of Inquiry</label>
-                            <textarea id="message" rows="4" required placeholder="Describe your trade or expansion targets..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary form-submit">Transmit Corporate Briefing</button>
-                    </form>
-                    <div class="contact-divider">OR</div>
-                    <a href="https://wa.me/971500000000" target="_blank" class="whatsapp-cta">
-                        <i class="fa-brands fa-whatsapp"></i> Chat Live with UAE Trade Expert
-                    </a>
-                </div>
-                <div class="map-container glass-card">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4199.031716065686!2d55.45593937458333!3d25.319922689709518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f006a90d7a7%3A0xdc16cfd62e4d43f7!2sEyely%20Business%20Solution!5e0!3m2!1sen!2sae!4v1781094711674!5m2!1sen!2sae"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+<div class="ticker">
+  <div class="ticker-track mono" id="ticker"></div>
 </div>
-            </div>
-        </div>
-    </section>
+<script>
+  const items = [
+    ["FR-002","AVIATOR GOLD","AED 249","up"],
+    ["FR-014","LUXURY GOLD FRAME","AED 329","up"],
+    ["UV400","CERTIFIED ON EVERY FRAME","—",""],
+    ["FR-030","ELITE EXECUTIVE","AED 399","up"],
+    ["TRADE LIC.","SPCFZ SHARJAH, UAE","—",""],
+    ["FR-006","TITANIUM SILVER","AED 299","up"],
+    ["PAYMENT","TABBY INSTALLMENTS AVAILABLE","—",""],
+    ["FR-021","VINTAGE ROUND","AED 219","up"],
+    ["ORDER","WHATSAPP DISPATCH, UNDER 5 MIN","—",""],
+  ];
+  const html = items.map(i => `<span class="ticker-item"><b>${i[0]}</b> ${i[1]} <span class="${i[3]}">${i[2]}</span></span>`).join("");
+  document.getElementById("ticker").innerHTML = html + html;
+</script>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <span class="logo-main">EYELY</span>
-                    <span class="logo-sub">BUSINESS SOLUTIONS</span>
-                    <p>Empowering International Trade & Business Growth from the heart of the United Arab Emirates.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <a href="#about">Corporate Profile</a>
-                    <a href="#services">Our Suite</a>
-                    <a href="#why-choose-us">Strategic Value</a>
-                </div>
-                <div class="footer-contact-info">
-                    <h4>Corporate Office</h4>
-                    <p><i class="fa-solid fa-building gold-text"></i> <strong>Eyely FZE</strong></p>
-                    <p><i class="fa-solid fa-location-dot gold-text"></i> Business Center, SPC Freezone, Sharjah, United Arab Emirates</p>
-                    <p><i class="fa-solid fa-envelope gold-text"></i> Info@eyely.store </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EYELY FZE. All Corporate Rights Reserved. Developed to Global Institutional Standards.</p>
-            </div>
-        </div>
-    </footer>
+<section id="about">
+  <div class="container about-grid reveal">
+    <div>
+      <span class="eyebrow">Our Profile</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin-bottom:20px;">A statement of confidence, precision &amp; professionalism</h2>
+      <p>At Eyely, we believe eyewear is more than a functional accessory — it's a reflection of your ambition. Eyely was founded on a simple observation: <strong>business professionals needed eyewear that matched the pace of their working lives</strong>, but most brands fell into either high fashion or pure utility, rarely both.</p>
+      <p>Registered as a general trading entity in the UAE, Eyely Business Solutions operates with clear intent: sourcing, curating, and distributing premium sunglasses to individual professionals and corporate accounts across the region.</p>
+      <div class="about-figure">
+        <img src="https://images.pexels.com/photos/2371968/pexels-photo-2371968.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Eyely eyewear detail">
+      </div>
+    </div>
+    <div class="card card-copper">
+      <h4>Our Identity</h4>
+      <p>Sourced from verified suppliers with regional reliability and a global mindset — built for consistent, on-time order fulfillment across the GCC trade framework.</p>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<section id="collections" class="catalog-section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Executive Catalog</span>
+      <h2>Thirty frames. One tap to order.</h2>
+      <p>Every frame is durable, versatile, and sharp enough for any professional setting. Tap "Order" on any piece to send your selection straight to our sourcing desk on WhatsApp.</p>
+    </div>
+    <div class="product-grid reveal" id="product-list"></div>
+  </div>
+</section>
+
+<script>
+const phone = "971506562016";
+const products = [
+  {code:"FR-001", name:"Classic Black", price:"AED 199", img:"https://images.pexels.com/photos/2371968/pexels-photo-2371968.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-002", name:"Aviator Gold", price:"AED 249", img:"https://images.pexels.com/photos/1548027/pexels-photo-1548027.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Aviator · Polarized"},
+  {code:"FR-003", name:"Matte Black Aviator", price:"AED 229", img:"https://images.pexels.com/photos/1705391/pexels-photo-1705391.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Aviator · UV400"},
+  {code:"FR-004", name:"Premium Polarized", price:"AED 279", img:"https://images.pexels.com/photos/2659705/pexels-photo-2659705.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Square · Polarized"},
+  {code:"FR-005", name:"Business Elite", price:"AED 259", img:"https://images.pexels.com/photos/255307/pexels-photo-255307.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-006", name:"Titanium Silver", price:"AED 299", img:"https://images.pexels.com/photos/10837794/pexels-photo-10837794.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Titanium · Square · UV400"},
+  {code:"FR-007", name:"Steampunk Blue Lens", price:"AED 319", img:"https://images.pexels.com/photos/13982235/pexels-photo-13982235.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Round · Mirror lens"},
+  {code:"FR-008", name:"Carbon Fiber Edition", price:"AED 349", img:"https://images.pexels.com/photos/15926528/pexels-photo-15926528.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Composite · Sport · UV400"},
+  {code:"FR-009", name:"Executive Tortoise", price:"AED 239", img:"https://images.pexels.com/photos/1974614/pexels-photo-1974614.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-010", name:"Blue Mirror", price:"AED 229", img:"https://images.pexels.com/photos/2659705/pexels-photo-2659705.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Square · Mirror lens"},
+  {code:"FR-011", name:"Amber Reflective", price:"AED 249", img:"https://images.pexels.com/photos/255305/pexels-photo-255305.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Round · Polarized"},
+  {code:"FR-012", name:"Retro Classic", price:"AED 189", img:"https://images.pexels.com/photos/255308/pexels-photo-255308.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Round · UV400"},
+  {code:"FR-013", name:"Urban Windowsill", price:"AED 209", img:"https://images.pexels.com/photos/18404057/pexels-photo-18404057.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Wayfarer · UV400"},
+  {code:"FR-014", name:"Luxury Gold Frame", price:"AED 329", img:"https://images.pexels.com/photos/1705391/pexels-photo-1705391.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Aviator · Polarized"},
+  {code:"FR-015", name:"Garden Round", price:"AED 269", img:"https://images.pexels.com/photos/14126674/pexels-photo-14126674.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Round · UV400"},
+  {code:"FR-016", name:"Field Rest", price:"AED 199", img:"https://images.pexels.com/photos/16282782/pexels-photo-16282782.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-017", name:"Sport Polarized", price:"AED 279", img:"https://images.pexels.com/photos/15926528/pexels-photo-15926528.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Composite · Sport · Polarized"},
+  {code:"FR-018", name:"Fashion Black", price:"AED 239", img:"https://images.pexels.com/photos/2371968/pexels-photo-2371968.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Square · UV400"},
+  {code:"FR-019", name:"Crystal Grey", price:"AED 249", img:"https://images.pexels.com/photos/255307/pexels-photo-255307.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Round · UV400"},
+  {code:"FR-020", name:"Titanium Pro", price:"AED 359", img:"https://images.pexels.com/photos/10837794/pexels-photo-10837794.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Titanium · Square · Polarized"},
+  {code:"FR-021", name:"Vintage Round", price:"AED 219", img:"https://images.pexels.com/photos/255308/pexels-photo-255308.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Round · UV400"},
+  {code:"FR-022", name:"Executive Blue", price:"AED 259", img:"https://images.pexels.com/photos/13982235/pexels-photo-13982235.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Round · Mirror lens"},
+  {code:"FR-023", name:"Modern Square", price:"AED 229", img:"https://images.pexels.com/photos/2659705/pexels-photo-2659705.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Square · UV400"},
+  {code:"FR-024", name:"Signature Series", price:"AED 319", img:"https://images.pexels.com/photos/1548027/pexels-photo-1548027.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Aviator · Polarized"},
+  {code:"FR-025", name:"Premium Matte", price:"AED 289", img:"https://images.pexels.com/photos/16282782/pexels-photo-16282782.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-026", name:"Luxury Silver", price:"AED 339", img:"https://images.pexels.com/photos/10837794/pexels-photo-10837794.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Titanium · Square · UV400"},
+  {code:"FR-027", name:"Classic Tortoise", price:"AED 209", img:"https://images.pexels.com/photos/1974614/pexels-photo-1974614.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Full-rim · UV400"},
+  {code:"FR-028", name:"Gold Aviator Pro", price:"AED 299", img:"https://images.pexels.com/photos/1705391/pexels-photo-1705391.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Metal · Aviator · Polarized"},
+  {code:"FR-029", name:"Black Diamond", price:"AED 369", img:"https://images.pexels.com/photos/255305/pexels-photo-255305.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Round · UV400"},
+  {code:"FR-030", name:"Elite Executive", price:"AED 399", img:"https://images.pexels.com/photos/18404057/pexels-photo-18404057.jpeg?auto=compress&cs=tinysrgb&w=600", spec:"Acetate · Wayfarer · Polarized"}
+];
+
+const container = document.getElementById("product-list");
+container.innerHTML = products.map(p => `
+  <div class="product-card">
+    <div class="product-img-wrapper">
+      <span class="frame-code mono">${p.code}</span>
+      <img src="${p.img}" alt="${p.name} sunglasses" loading="lazy">
+    </div>
+    <div class="product-meta">
+      <h3>${p.name}</h3>
+      <div class="spec-line mono">${p.spec}</div>
+    </div>
+    <div class="product-foot">
+      <span class="product-price mono">${p.price}</span>
+      <a href="https://wa.me/${phone}?text=Hello%20Eyely%20Team%2C%20I%20want%20to%20order%20the%20${encodeURIComponent(p.name)}%20(${p.code})."
+         target="_blank" class="order-btn">
+         <i class="fa-brands fa-whatsapp"></i> Order
+      </a>
+    </div>
+  </div>
+`).join("");
+</script>
+
+<section id="why-choose-us">
+  <div class="container about-grid reveal">
+    <div>
+      <span class="eyebrow">Why Eyely</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin-bottom:26px;">Uncompromising focus. Distinctive presence.</h2>
+      <ul class="why-list">
+        <li>
+          <span class="why-icon"><i class="fa-solid fa-briefcase"></i></span>
+          <div><strong>Built for business</strong><span>Selected with the executive lifestyle in mind — durable, versatile, and sharp.</span></div>
+        </li>
+        <li>
+          <span class="why-icon"><i class="fa-solid fa-shield-halved"></i></span>
+          <div><strong>Quality sourcing</strong><span>Consistent benchmarks ensure reliable UV filters and structural stability on every frame.</span></div>
+        </li>
+        <li>
+          <span class="why-icon"><i class="fa-brands fa-whatsapp"></i></span>
+          <div><strong>Order in seconds</strong><span>No accounts, no checkout queues — send your selection straight to our sourcing desk on WhatsApp.</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;padding:48px 30px;">
+      <svg width="52" height="52" viewBox="0 0 40 40" fill="none" style="margin:0 auto 20px;">
+        <circle cx="20" cy="20" r="18" stroke="#c8925a" stroke-width="1.2"/>
+        <circle cx="20" cy="20" r="12.5" stroke="#c8925a" stroke-width="0.6" opacity="0.5"/>
+        <line x1="20" y1="2" x2="20" y2="7" stroke="#c8925a" stroke-width="1.2"/>
+        <circle cx="20" cy="20" r="2" fill="#c8925a"/>
+      </svg>
+      <h4>Executive Styling</h4>
+      <p>Eyewear that matches your ambition and the fast pace of your business life.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how-to-order" class="how-section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Simple &amp; Secure</span>
+      <h2>How to order</h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Browse the catalog</h3>
+        <p>Scroll the showroom above and pick the frame that fits — every card shows its spec and price.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Send it on WhatsApp</h3>
+        <p>Tap "Order" and your selection is sent to our sourcing desk instantly, pre-filled and ready to send.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Pay your way</h3>
+        <p>Complete payment securely online, on delivery, or via Tabby installments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gifting">
+  <div class="container reveal">
+    <div class="banner">
+      <div class="banner-bg">
+        <img src="https://images.pexels.com/photos/10837794/pexels-photo-10837794.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="">
+      </div>
+      <div class="banner-inner">
+        <h2>Distinguished gifting for business occasions</h2>
+        <p>Looking for a distinctive gift for a colleague, key stakeholder, or your whole team? Eyely frames are a fitting choice for corporate promotions, milestones, and client appreciation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Inquiries</span>
+      <h2>Acquire your signature frame</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="card">
+        <form id="corporateForm" onsubmit="event.preventDefault(); alert('Inquiry recorded. Our procurement line will contact you shortly.');">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="e.g., Tariq Ahmad">
+          </div>
+          <div class="form-group">
+            <label for="email">Corporate Email</label>
+            <input type="email" id="email" required placeholder="tariq@enterprise.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Specific Style or Customization Notes</label>
+            <textarea id="message" rows="4" required placeholder="Describe your corporate gifting or framing preferences..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Transmit Sourcing Request</button>
+        </form>
+        <div class="contact-divider">OR</div>
+        <a href="https://wa.me/971506562016" target="_blank" class="whatsapp-cta">
+          <i class="fa-brands fa-whatsapp"></i> Chat Live with a Sourcing Expert
+        </a>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.391789979708!2d55.4800!3d25.3200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f0000000001%3A0x0!2sSharjah+Publishing+City+Free+Zone!5e0!3m2!1sen!2sae!4v1625000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-main">EYELY</span><br>
+        <span class="logo-sub">BUSINESS SOLUTIONS</span>
+        <p>Eyely Business Solutions is a UAE-registered general trading company specializing in premium eyewear for business professionals.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="#about">Our Story</a>
+        <a href="#collections">Catalog</a>
+        <a href="#how-to-order">How to Order</a>
+      </div>
+      <div class="footer-contact-info">
+        <h4>Corporate Office</h4>
+        <p><i class="fa-solid fa-building"></i> <span>Eyely Business Solutions</span></p>
+        <p><i class="fa-solid fa-file-invoice"></i> <span>Activity: General Trading (Eyewear &amp; Accessories)</span></p>
+        <p><i class="fa-solid fa-location-dot"></i> <span>SPCFZ Business Center, Al Zahia, Sharjah, UAE</span></p>
+        <p><i class="fa-solid fa-envelope"></i> <span>info@eyely.store</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 EYELY Business Solutions. All Corporate Rights Reserved. Sourced via Verified Suppliers.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+</script>
+
 </body>
 </html>
